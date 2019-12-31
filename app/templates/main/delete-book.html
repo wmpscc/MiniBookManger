@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% block title %}图书管理{% endblock %}
+
+{% block card %}
+<div class="layui-card-header">
+    <h2>图书删除</h2>
+
+</div>
+{% endblock %}
+{% block body %}
+<form class="layui-form" method="post">
+    {{ form.csrf_token }}
+    <div class="layui-form-item" style="height: 50px;">
+        <label class="layui-form-label" style="font-size: medium">ISBN：</label>
+        <div class="layui-input-block">
+            {{ form.isbn(class="layui-input", style="width:40%") }}
+        </div>
+    </div>
+    <div class="layui-form-item" style="height: 50px;">
+        <label class="layui-form-label" style="font-size: medium">书名：</label>
+        <div class="layui-input-block">
+            {{ form.book_name(class="layui-input", style="width:40%") }}
+        </div>
+    </div>
+    <div class="layui-form-item" style="height: 50px;">
+        <div class="layui-input-block">
+            {{ form.submit(class="layui-btn", style="width:100px;font-size:medium") }}
+        </div>
+    </div>
+</form>
+{% endblock %}
